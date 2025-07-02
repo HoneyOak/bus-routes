@@ -10,4 +10,9 @@ times = loc.get_times(stops)
 G = nx.DiGraph()
 for edge in times:
     G.add_edge(edge['fro']['name'], edge['to']['name'], weight=edge['time'])
-Graph.create(G)
+graph = Graph()
+# graph.create(G)
+
+solved = graph.solver(G)
+
+print(solved)
