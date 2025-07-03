@@ -5,7 +5,7 @@ from update import Update
 
 loc = Locations()
 update = Update()
-# update.update_times()
+update.update_times()
 
 times = update.load_cache()
 

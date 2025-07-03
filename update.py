@@ -32,12 +32,13 @@ class Update:
 
     def update_times(self):
         loc = Locations()
-        stops = loc.get_stops(18.9401, 72.8348, 500.0)
+        # stops = loc.get_stops(19.116807, 72.708707, 27661.59)
+        stops = loc.sweep_mumbai()
         times = loc.get_times(stops)
         self.save_cache(times)
 
     def update_solved(self, G):
         graph = Graph()
-        solved = graph.solver(G, pop_size=10, elite_size=2, stall_limit= 30, mut_rate = 0.5)
+        solved = graph.solver(G, pop_size=10000, elite_size=30, stall_limit=50000, mut_rate = 0.1)
         self.save_solved(solved)
         print(solved)

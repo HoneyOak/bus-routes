@@ -21,7 +21,6 @@ class Graph:
         graphistry.register(api=3, username='HoneyOak', password=self.password)
 
         highlight_edges = set(zip(path_nodes, path_nodes[1:]))
-        print(highlight_edges)
         # Convert networkx DiGraph to DataFrame
         edges = pd.DataFrame([
             {
@@ -51,7 +50,7 @@ class Graph:
             "is_path",
             categorical_mapping={
                 "yes": "#e74c3c",  # red for path
-                "no": "#aaaaaa"    # blue for all others
+                "no": "#aaaaaa"    # grey for all others
             },
             default_mapping="#aaaaaa"  # fallback grey
         ).plot()
