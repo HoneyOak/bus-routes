@@ -12,7 +12,7 @@ class Locations:
         # JSON payload
         payload = {
             "includedTypes": ["bus_stop",  "bus_station"],
-            "maxResultCount": 10,
+            "maxResultCount": 4,
             "locationRestriction": {
                 "circle": {
                     "center": {
@@ -52,7 +52,7 @@ class Locations:
         for stop in bus_stops:
             origin = f"{stop['location']['latitude']},{stop['location']['longitude']}"
             for stop_2 in bus_stops:
-                if stop_2 == stop:
+                if stop['location'] == stop_2['location']:
                     continue
                 destination =  f"{stop_2['location']['latitude']},{stop_2['location']['longitude']}"
                 # get stop and stop2 pair duration_in_traffic

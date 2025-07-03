@@ -1,18 +1,23 @@
 from locations import Locations
 import networkx as nx
 from graph import Graph
+from update import Update
 
 loc = Locations()
-stops = loc.get_stops(18.9401, 72.8348, 1000.0)
+update = Update()
+# update.update_times()
 
-times = loc.get_times(stops)
+times = update.load_cache()
 
 G = nx.DiGraph()
 for edge in times:
     G.add_edge(edge['fro']['name'], edge['to']['name'], weight=edge['time'])
+G.remove_edges_from(nx.selfloop_edges(G))
 graph = Graph()
-# graph.create(G)
 
-solved = graph.solver(G)
+update.update_solved(G)
 
-print(solved)
+solved = update.load_solved()
+
+graph.create(G, solved)
+
