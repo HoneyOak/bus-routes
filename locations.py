@@ -2,9 +2,14 @@ import os
 from dotenv import load_dotenv
 import requests
 import time
-import math
+import random
 from datetime import datetime, timezone
-
+from itertools import islice
+from here_location_services import LS
+from here_location_services.config.matrix_routing_config import (
+    WorldRegion,
+    MATRIX_ATTRIBUTES,
+)
 
 class Locations:
     def __init__(self):
@@ -54,46 +59,71 @@ class Locations:
                 "raw_tags": tags
             }
             bus_stops.append(stop)
+        sampled_stops = random.sample(bus_stops, 100)
 
-        return bus_stops
+        return sampled_stops
+
+    def chunked(self, iterable, size):
+        for i in range(0, len(iterable), size):
+            yield iterable[i:i + size]
 
     def get_times(self, bus_stops):
-        here_api_key = self.API
-        url = "https://router.hereapi.com/v8/routes"
-        headers = {"Content-Type": "application/json"}
-        
-        times = []
-        for i, stop in enumerate(bus_stops):
-            origin = f"{stop['location']['latitude']},{stop['location']['longitude']}"
-            for j, stop_2 in enumerate(bus_stops):
-                if i == j:
-                    continue
-                destination = f"{stop_2['location']['latitude']},{stop_2['location']['longitude']}"
+        ls = LS(api_key=self.API)
+        all_times = []
+        locations = [
+            {"lat": stop['location']['latitude'], "lng": stop['location']['longitude']}
+            for stop in bus_stops
+        ]
 
-                params = {
-                    "transportMode": "car",
-                    "origin": origin,
-                    "destination": destination,
-                    "return": "summary",
-                    "apikey": here_api_key
-                }
+        origin_chunks = list(self.chunked(list(enumerate(locations)), 15))
+        destination_chunks = list(self.chunked(list(enumerate(locations)), 100))
+
+        for origin_chunk in origin_chunks:
+            for dest_chunk in destination_chunks:
+                origin_indices, origin_locs = zip(*origin_chunk)
+                dest_indices, dest_locs = zip(*dest_chunk)
+
+                region_definition = WorldRegion()
+                matrix_attributes = [
+                    MATRIX_ATTRIBUTES.travelTimes,
+                    MATRIX_ATTRIBUTES.distances,
+                ]
 
                 try:
-                    res = requests.get(url, headers=headers, params=params)
-                    data = res.json()
-                    duration = data["routes"][0]["sections"][0]["summary"]["duration"]  # in seconds
-                    print(data)
+                    result = ls.matrix(
+                        origins=list(origin_locs),
+                        destinations=list(dest_locs),
+                        region_definition=region_definition,
+                        matrix_attributes=matrix_attributes,
+                        transport_mode="car",
+                        departure_time=datetime.now(timezone.utc).isoformat(),
+                    )
 
-                    times.append({
-                        "fro": stop,
-                        "to": stop_2,
-                        "time": duration
-                    })
+                    matrix = result.matrix
+                    travel_times = matrix["travelTimes"]
+                    distances = matrix["distances"]
+                    num_dest = len(dest_indices)
+
+                    print(f"Received matrix: {len(origin_indices)}×{len(dest_indices)}")
+
+                    index = 0
+                    for i_idx, i in enumerate(origin_indices):
+                        for j_idx, j in enumerate(dest_indices):
+                            time_value = travel_times[index]
+                            distance_value = distances[index]
+                            index += 1
+                            if time_value is not None:
+                                all_times.append({
+                                    "fro": bus_stops[i],
+                                    "to": bus_stops[j],
+                                    "time": time_value,
+                                    "distance": distance_value
+                                })
 
                     time.sleep(0.2)  # prevent rate limiting
 
                 except Exception as e:
-                    print(f"Exception for {origin} → {destination}: {e}")
+                    print(f"Matrix request failed: {e}")
                     continue
 
-        return times
+        return all_times
