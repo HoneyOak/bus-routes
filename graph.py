@@ -21,6 +21,7 @@ class Graph:
         graphistry.register(api=3, username='HoneyOak', password=self.password)
 
         highlight_edges = set(zip(path_nodes, path_nodes[1:]))
+        print(highlight_edges)
         # Convert networkx DiGraph to DataFrame
         edges = pd.DataFrame([
             {
