@@ -37,7 +37,7 @@ PASSWORD=your_graphistry_password
 ```
 
 You can get your HERE API key from: https://developer.here.com  
-Graphistry account credentials: https://hub.graphistry.com
+Graphistry account credentials: https://hub.graphistry.com 
 Also change the graphistry username in `graph.py`
 
 ---
@@ -62,7 +62,7 @@ Also change the graphistry username in `graph.py`
 
 ---
 
-## 🙌 Acknowledgements
+## Acknowledgements
 
 - [Hack Club](https://hackclub.com/) Summer of Making 2025
 - Overpass
