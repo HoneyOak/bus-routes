@@ -38,6 +38,6 @@ class Update:
 
     def update_solved(self, G):
         graph = Graph()
-        solved = graph.solver(G, pop_size=10000, elite_size=30, stall_limit=5000, mut_rate = 0.1)
+        solved = graph.solver(G, pop_size=10000, elite_size=10, stall_limit=500, mut_rate = 0.3)
         self.save_solved(solved)
         print(solved)
