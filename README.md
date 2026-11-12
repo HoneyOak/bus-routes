@@ -68,3 +68,9 @@ Also change the graphistry username in `graph.py`
 - Overpass
 - HERE Technologies
 - Graphistry
+
+## BEST-only GTFS research track
+
+A reproducible BEST-only descriptive baseline now accompanies the route-optimizer prototype under the research/ folder. It includes deterministic route-pattern reconstruction, validation for times beyond 24:00, baseline quality analysis, and source-provenance notes.
+
+The working snapshot is an unverified third-party multi-operator Greater Mumbai feed with BEST records; feed_info.txt names BLRTransit. Its exact upstream archive and license scope remain unconfirmed. Raw GTFS files, the local audit ZIP, and generated tables remain outside this repository. See research/README.md.
