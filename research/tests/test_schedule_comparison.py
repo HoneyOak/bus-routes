@@ -139,6 +139,30 @@ class ScheduleComparisonTests(unittest.TestCase):
         self.assertTrue((self.output / "departure_comparison.csv").is_file())
         self.assertTrue((self.output / "comparison.json").is_file())
 
+    def test_outputs_are_deterministic(self) -> None:
+        first_output = self.root / "first-output"
+        second_output = self.root / "second-output"
+        compare_schedule_reference(
+            self.baseline,
+            self.reference_csv,
+            self.metadata_path,
+            first_output,
+        )
+        compare_schedule_reference(
+            self.baseline,
+            self.reference_csv,
+            self.metadata_path,
+            second_output,
+        )
+        self.assertEqual(
+            (first_output / "departure_comparison.csv").read_bytes(),
+            (second_output / "departure_comparison.csv").read_bytes(),
+        )
+        self.assertEqual(
+            (first_output / "comparison.json").read_bytes(),
+            (second_output / "comparison.json").read_bytes(),
+        )
+
     def test_rejects_reference_day_outside_service_days(self) -> None:
         metadata = json.loads(self.metadata_path.read_text(encoding="utf-8"))
         metadata["reference_service_days"] = ["Monday"]
