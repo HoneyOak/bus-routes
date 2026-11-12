@@ -148,7 +148,6 @@ def compare_schedule_reference(
         "reference_id",
         "source_name",
         "source_url",
-        "source_data_retrieved_from_chalo",
         "observed_on",
         "reference_route_label",
         "reference_origin_stop",
