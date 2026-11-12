@@ -111,11 +111,42 @@
     "License and attribution scope for the exact snapshot and underlying operator data.",
     "Operator-level completeness and schedule accuracy."
   ],
-  "next_gate": "Compare a dated official BEST Prawas timetable or BEST-supplied schedule export against a reproducible route sample, including zero-duration routes and post-midnight trips.",
+  "next_gate": "Obtain a dated primary BEST Prawas timetable or BEST schedule export and compare a reproducible sample that includes a zero-duration route, an ordinary route, and a post-midnight trip.",
   "repository_sync": {
     "raw_gtfs_files_committed": false,
     "generated_tables_committed": false,
     "local_audit_package_committed": false,
-    "note": "Research code and documentation are tracked here. Raw data and generated outputs remain in the local workspace while exact source identity and license scope are unresolved."
-  }
+    "note": "Research code and documentation are tracked here. Raw GTFS and generated outputs remain in the local workspace while exact source identity and license scope are unresolved. A small attributed secondary schedule extract is tracked as comparison evidence.",
+    "curated_schedule_reference_extract_committed": true
+  },
+  "secondary_schedule_references": [
+    {
+      "id": "airportbus_best_321_mon_sat",
+      "url": "https://airportbus.in/mumbai-csmia/to-airport/route/321-mahim/",
+      "methodology_url": "https://airportbus.in/data-sources/",
+      "reference_schedule_retrieved_from_chalo": "2026-10-16",
+      "reviewed_on": "2026-11-12",
+      "route_mapping": {
+        "reference_label": "321",
+        "gtfs_route_id": "BEST_1933",
+        "gtfs_route_short_name": "321 LTD",
+        "mapping_status": "candidate_match_not_exact_identifier_match"
+      },
+      "service_date_compared": "2026-10-16",
+      "departure_comparison": {
+        "reference_departures": 33,
+        "gtfs_departures": 57,
+        "exact_time_overlaps": 31,
+        "reference_only": 2,
+        "gtfs_only": 26,
+        "status": "partial_secondary_source_check"
+      },
+      "limitations": [
+        "The reference page says its departures are BEST schedule data carried by Chalo, but the page is not affiliated with BEST.",
+        "The schedule effective date and local GTFS download date are unknown.",
+        "Only first-stop departure times were compared; intermediate times on the reference page are estimated.",
+        "The match does not validate the feed as complete, official, or accurate."
+      ]
+    }
+  ]
 }
