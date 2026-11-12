@@ -32,3 +32,7 @@ BEST's official [Bandra Kurla Complex Routes (Air Conditioned) PDF](https://www.
 ## Decision
 
 Treat the current feed as exploratory. Keep its schedule-duration values out of running-time or passenger-benefit claims until the affected routes are checked against an authoritative schedule with a matching effective date. Before publication or government presentation, establish the feed's source, license, update history, and completeness. The official PDF cross-check did not establish those items.
+
+## Secondary-source timetable pilot
+
+A separate route 321 LTD check is documented in docs/schedule_reference_review.md. It compares only first-stop departures with a dated secondary copy attributed to Chalo. The overlap is partial and does not establish official schedule accuracy. The primary-source validation gate remains open.
