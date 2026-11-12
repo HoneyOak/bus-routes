@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-12",
+  "local_snapshot": {
+    "audit_package": {
+      "path": "mumbai-gtfs-audit-package.zip",
+      "sha256": "8dd9baa02963f9fbf38725d1e3944a80a56b2792d8cad7fc6708700b92a4a9f4",
+      "size_bytes": 27260240,
+      "hash_scope": "The audit package ZIP, not the upstream GTFS ZIP."
+    },
+    "raw_inputs": [
+      "agency.txt",
+      "calendar.txt",
+      "feed_info.txt",
+      "routes.txt",
+      "stop_times.txt",
+      "stops.txt",
+      "trips.txt"
+    ],
+    "feed_info": {
+      "publisher_name": "BLRTransit",
+      "publisher_url": "https://blrtransit.com",
+      "declared_service_start": "2026-08-19",
+      "declared_service_end": "2027-02-15",
+      "retrieval_timestamp": null,
+      "upstream_archive_url": null,
+      "upstream_archive_sha256": null,
+      "license_file_present": false
+    },
+    "agencies": [
+      "BEST",
+      "TMT",
+      "KDMT",
+      "VVMT"
+    ],
+    "route_counts": {
+      "all_agencies_route_ids": 1609,
+      "best_route_ids": 937
+    },
+    "status": "exploratory_unverified_snapshot"
+  },
+  "candidate_sources": [
+    {
+      "id": "mobility_database_mdb_3138",
+      "url": "https://mobilitydatabase.org/feeds/gtfs/mdb-3138",
+      "classification": "community_feed_record",
+      "producer_url": "https://github.com/croyla/mumbai-gtfs/raw/refs/heads/main/gtfs_compat.zip",
+      "observed_latest_fetch_date": "2026-08-20",
+      "observed_service_start": "2026-08-19",
+      "observed_service_end": "2027-02-15",
+      "observed_route_count": 935,
+      "identity_assessment": "strong_source_family_candidate_exact_local_archive_not_matched",
+      "notes": [
+        "The producer URL and service-date window match a plausible source family.",
+        "The repository describes a separate original-format gtfs.zip and compatibility gtfs_compat.zip.",
+        "Local raw files have 1609 route IDs across four agencies; the registry record reports 935 routes and links to the compatibility archive.",
+        "No source-archive checksum or file-by-file comparison establishes that the supplied raw files came from either repository archive."
+      ]
+    },
+    {
+      "id": "croyla_mumbai_gtfs_repository",
+      "url": "https://github.com/croyla/mumbai-gtfs",
+      "classification": "community_source_repository",
+      "license_label": "MIT-0",
+      "license_url": "https://github.com/croyla/mumbai-gtfs/blob/main/LICENSE",
+      "license_assessment": "repository_license_observed_underlying_data_scope_unconfirmed",
+      "notes": [
+        "README describes gtfs.zip as preserving original route variants and gtfs_compat.zip as merging routes for compatibility.",
+        "README names KDMT, TMT, and BEST; the local snapshot also contains VVMT."
+      ]
+    }
+  ],
+  "official_references": [
+    {
+      "id": "best_bkc_routes_pdf",
+      "url": "https://www.bestundertaking.com/assets/pdf/mmrconnect.pdf",
+      "coverage": [
+        "BKC-10",
+        "BKC-11",
+        "BKC-12",
+        "BKC-13",
+        "BKC-21",
+        "BKC-22",
+        "BKC-23",
+        "BKC-24",
+        "BKC-25"
+      ],
+      "exact_local_best_route_short_name_match": false,
+      "effective_date_identified": false,
+      "validation_status": "limited_reference_no_snapshot_validation"
+    },
+    {
+      "id": "mcgm_year_book_2025",
+      "url": "https://www.mcgm.gov.in/irj/go/km/docs/documents/HomePage%20Data/Whats%20New/English%20Year%20Book%202025%20Portal.pdf",
+      "observed_best_route_count": 427,
+      "as_of_date": "2025-03-31",
+      "validation_status": "not_directly_comparable_to_gtfs_route_id_count"
+    },
+    {
+      "id": "best_prawas_app_listing",
+      "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
+      "official_schedule_feature_described": "static timetable for each route",
+      "dated_timetable_examined": false,
+      "validation_status": "candidate_for_manual_schedule_sample"
+    }
+  ],
+  "unresolved": [
+    "Exact upstream GTFS ZIP and version matching the local raw files.",
+    "Upstream archive checksum or independent byte-level identity check.",
+    "Retrieval timestamp and snapshot provenance for the raw feed.",
+    "License and attribution scope for the exact snapshot and underlying operator data.",
+    "Operator-level completeness and schedule accuracy."
+  ],
+  "next_gate": "Compare a dated official BEST Prawas timetable or BEST-supplied schedule export against a reproducible route sample, including zero-duration routes and post-midnight trips.",
+  "repository_sync": {
+    "raw_gtfs_files_committed": false,
+    "generated_tables_committed": false,
+    "local_audit_package_committed": false,
+    "note": "Research code and documentation are tracked here. Raw data and generated outputs remain in the local workspace while exact source identity and license scope are unresolved."
+  }
+}
