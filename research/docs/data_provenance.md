@@ -54,3 +54,11 @@ The [BEST Prawas app listing](https://play.google.com/store/apps/details?id=com.
 Use a dated BEST Prawas timetable or a schedule export supplied by BEST to compare a small, reproducible sample of routes with the local BEST records. Begin with routes flagged for zero-duration schedule values, and include ordinary routes and post-midnight trips. For each sample, save the reference date and route label, compare ordered stops and scheduled times, and record whether the match is exact, partial, or unavailable. Do not treat a community validator result or a route-count match as proof of operator approval.
 
 In parallel, retain the Mobility Database archive date and source URL as candidate provenance, and obtain the exact source archive/hash and applicable data license before publishing or redistributing the raw schedules.
+
+## Preliminary timetable comparison (2026-11-12)
+
+A preliminary cross-source test compared the 321 LTD GTFS route (BEST_1933, Mahim Bus Station to Barve Nagar) with a third-party page for route 321 from Mahim toward the airport. The page says the service continues to Barve Nagar and attributes its departure list to BEST schedule data carried by Chalo; its data-source page says that schedule was retrieved from Chalo on 2026-10-16. Only first-stop departures were compared because intermediate times on the reference page are estimates.
+
+For Friday 2026-10-16, the GTFS calendar activates 57 first-stop departures; the reference lists 33. Thirty-one departure times overlap, with 2 reference-only and 26 GTFS-only. This is partial overlap between candidate route representations. The labels differ, the reference effective date is unknown, and the local feed download date is unknown. The comparator, attributed extract, and route review are documented under docs/schedule_reference_review.md and data/references/.
+
+This does not meet the primary-source validation gate. Obtain a dated BEST Prawas timetable or BEST schedule export and compare a zero-duration route, an ordinary route, and a post-midnight trip before treating route-level schedule values as validated.
