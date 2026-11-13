@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "reference_id": "airportbus_best_321_mon_sat",
+  "source_name": "airportbus.in",
+  "source_url": "https://airportbus.in/mumbai-csmia/to-airport/route/321-mahim/",
+  "source_methodology_url": "https://airportbus.in/data-sources/",
+  "source_data_retrieved_from_chalo": "2026-10-16",
+  "observed_on": "2026-11-12",
+  "reference_route_label": "321",
+  "reference_origin_stop": "Mahim Bus Station",
+  "reference_service_days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
+  "service_date_compared": "2026-10-16",
+  "gtfs_route_id": "BEST_1933",
+  "gtfs_route_short_name": "321 LTD",
+  "gtfs_direction_id": "0",
+  "gtfs_origin_stop_id": "BEST_19185",
+  "gtfs_origin_stop_name": "Mahim Bus Station",
+  "schedule_effective_date": null,
+  "comparison_scope": "First-stop scheduled departures only; intermediate stop times on the reference page are estimated.",
+  "source_authority": "Secondary copy of a BEST-published timetable carried by Chalo, according to airportbus.in. The reference website states it is not affiliated with BEST or the airport.",
+  "license_status": "No explicit license for the source page data was identified. Stored here as a small, attributed factual timetable extract for research comparison.",
+  "limitations": [
+    "The feed archive retrieval date and exact upstream GTFS version remain unknown.",
+    "The source page identifies the external route as 321 while the GTFS route label is 321 LTD; the shared Mahim origin and Barve Nagar continuation make this a candidate route match, not an exact identifier match.",
+    "The source page says its schedule was taken from Chalo on 2026-10-16; its effective date is not stated.",
+    "The GTFS feed has one calendar applying the same trip set every day and no calendar_dates.txt was supplied.",
+    "Only departure times at Mahim Bus Station are compared; no stop-by-stop timetable validation is performed."
+  ]
+}
+

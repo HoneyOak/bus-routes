@@ -32,3 +32,14 @@ The ingestion outputs go under data/processed/. The BEST baseline and qualificat
 - The current feed is exploratory until its exact source, license, completeness, and dated operator schedule checks are established.
 
 See docs/best_only_baseline.md, docs/baseline_qualification.md, and docs/data_provenance.md.
+
+## Schedule-reference pilot
+
+The first source comparison is a secondary check of route 321 LTD against an attributed copy of a BEST schedule carried by Chalo. The route label and timetable date are not exact matches, and the comparison is partial. It is not operator validation.
+
+The input extract and source metadata are in data/references/. With the BEST baseline built, run:
+
+    python scripts/compare_best_schedule.py
+
+The tool checks the baseline hashes when raw files are available, filters service for the comparison date, and writes the time-by-time CSV and JSON summary under data/processed/best/qualification/. See docs/schedule_reference_review.md for the results and next gate.
+
