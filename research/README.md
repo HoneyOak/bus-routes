@@ -44,3 +44,7 @@ The input extract and source metadata are in data/references/. With the BEST bas
 The tool checks the baseline hashes when raw files are available, filters service for the comparison date, and writes the time-by-time CSV and JSON summary under data/processed/best/qualification/. See docs/schedule_reference_review.md for the results and next gate.
 
 The user-supplied BEST Prawas route-map views confirm endpoint labels for the zero-duration routes 394 AS and 397 AS. They show no timetable times; see docs/schedule_reference_review.md and data/references/best_prawas_route_maps.json.
+
+## BEST timetable evidence update (2026-11-23)
+
+A partial BEST Prawas timetable for route 394 AS shows 16 departures for 23-Nov-2026; 11 match the local candidate GTFS direction and five do not. The visible 05:50 and 22:50 bounds match the feed's first-stop extrema, but the screenshots do not establish a full-day match. A user-transcribed Google Maps sequence labelled 397 A aligns with part of candidate 397 AS's reverse stop pattern, while the route label, date, omitted stops, and zero-duration GTFS times remain unresolved. See [the schedule reference review](docs/schedule_reference_review.md) and [the evidence record](data/references/best_route_schedule_observations_2026-11-23.json).

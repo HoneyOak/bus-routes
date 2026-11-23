@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-11-12",
+  "reviewed_on": "2026-11-23",
   "local_snapshot": {
     "audit_package": {
       "path": "mumbai-gtfs-audit-package.zip",
@@ -100,10 +100,13 @@
       "id": "best_prawas_app_listing",
       "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
       "official_schedule_feature_described": "static timetable for each route",
-      "dated_timetable_examined": false,
-      "validation_status": "route_endpoint_identity_only_no_departure_times",
+      "dated_timetable_examined": true,
+      "validation_status": "partial_user_supplied_departure_list_cross_check_with_mismatches",
       "route_map_screenshots_examined": true,
-      "route_map_screenshots_provided_on": "2026-11-23"
+      "route_map_screenshots_provided_on": "2026-11-23",
+      "dated_prawas_timetable_screenshot_examined": true,
+      "selected_service_date_examined": "2026-11-23",
+      "schedule_effective_date_identified": false
     }
   ],
   "unresolved": [
@@ -113,7 +116,7 @@
     "License and attribution scope for the exact snapshot and underlying operator data.",
     "Operator-level completeness and schedule accuracy."
   ],
-  "next_gate": "Capture dated departure timetables for BEST Prawas routes 394 AS or 397 AS, in both directions if available; then compare scheduled departures against the GTFS service date and retain the capture or effective date.",
+  "next_gate": "Obtain a complete, dated 394 AS Prawas departure list or another primary schedule artifact to resolve the five visible time mismatches; obtain the Google Maps screenshot/date and confirm whether 397 A is 397 AS; then compare the complete ordered stops and times, including an available reverse-direction source.",
   "repository_sync": {
     "raw_gtfs_files_committed": false,
     "generated_tables_committed": false,
@@ -167,6 +170,32 @@
         "397 AS": 668
       },
       "assessment": "primary_app_route_map_evidence_only_schedule_validation_pending"
+    },
+    {
+      "id": "user_supplied_best_prawas_394_as_timetable_2026-11-23",
+      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
+      "route": "394 AS",
+      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
+      "selected_service_date": "2026-11-23",
+      "visible_departures": 16,
+      "gtfs_exact_time_overlaps": 11,
+      "visible_times_absent_from_gtfs": 5,
+      "visible_bounds_match_gtfs_extrema": true,
+      "complete_day_captured": false,
+      "schedule_effective_date_identified": false,
+      "assessment": "partial_primary_app_departure_cross_check_with_mismatches"
+    }
+  ],
+  "user_reported_route_sequence_observations": [
+    {
+      "id": "user_transcribed_google_maps_397_a_2026-11-23",
+      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
+      "reported_route_label": "397 A",
+      "candidate_gtfs_route_id": "BEST_2901",
+      "candidate_gtfs_route_label": "397 AS",
+      "stop_order_alignment": "GTFS stops 4 through 10 align from Kinnari Hall through Janata Market",
+      "date_or_screenshot_available": false,
+      "assessment": "candidate_pattern_match_unverified_route_variant_and_times"
     }
   ]
 }
