@@ -36,3 +36,9 @@ Treat the current feed as exploratory. Keep its schedule-duration values out of 
 ## Secondary-source timetable pilot
 
 A separate route 321 LTD check is documented in docs/schedule_reference_review.md. It compares only first-stop departures with a dated secondary copy attributed to Chalo. The overlap is partial and does not establish official schedule accuracy. The primary-source validation gate remains open.
+
+## BEST Prawas route-map evidence
+
+User-supplied BEST Prawas screenshots show route labels and terminals for 394 AS and 397 AS that correspond to the GTFS route names and endpoints. This helps identify the candidate route records: BEST_2898/BEST_2899 for 394 AS and BEST_2900/BEST_2901 for 397 AS.
+
+The quality report still flags every trip on these routes as zero-duration: 600 of 600 trips for 394 AS and 668 of 668 for 397 AS. The screenshots are map views with no departure times or effective date, so they do not validate the schedule values. See docs/schedule_reference_review.md.
