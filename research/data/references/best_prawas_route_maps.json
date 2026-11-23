@@ -78,7 +78,7 @@
     "The GTFS stop patterns have endpoint-name agreement with the screenshots, but exact stop-by-stop and path validation is not possible from these images alone.",
     "The GTFS routes listed have one pattern per direction and all trips calculate to zero scheduled duration because their recorded stop times repeat a single time value."
   ],
-  "next_step": "Capture the route timetable or static departure list for one of these routes in BEST Prawas, including both directions and any visible effective date or capture date.",
-  "source_listing_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication"
+  "next_step": "A partial 394 AS timetable is now recorded in best_route_schedule_observations_2026-11-23.json; obtain a complete dated timetable and resolve the visible timing mismatches and route-label/date uncertainties before schedule validation.",
+  "source_listing_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
+  "follow_up_schedule_evidence_path": "data/references/best_route_schedule_observations_2026-11-23.json"
 }
-

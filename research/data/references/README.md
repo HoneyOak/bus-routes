@@ -6,3 +6,5 @@ The files here are reference evidence, not replacements for the immutable GTFS i
 
 The GTFS archive's exact source version and license scope remain unresolved. Raw GTFS and generated outputs are not part of this reference folder.
 
+The user-supplied route timetable and stop-sequence transcription are recorded in [best_route_schedule_observations_2026-11-23.json](best_route_schedule_observations_2026-11-23.json). It records the 16 visible 394 AS Prawas departures and their partial match to the local GTFS candidate, plus the user-reported Google Maps sequence labelled 397 A and its candidate 397 AS stop-pattern alignment. The Prawas screenshots and Google Maps screenshot/URL are not archived, so the file distinguishes what was visible or transcribed from unresolved dates and route identity.
+

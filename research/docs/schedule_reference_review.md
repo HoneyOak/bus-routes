@@ -58,3 +58,21 @@ The user supplied two BEST Prawas map-view screenshots. The 394 AS screen shows 
 Each direction has one reconstructed GTFS stop pattern. The screenshots show maps and endpoint names but no departure times or schedule effective date. They support route identity and terminal-name checks; they do not resolve the zero-duration schedules or provide a stop-by-stop validation. The GTFS feed also lacks shapes.txt, so its full road alignment cannot be compared to the app line from the supplied files.
 
 A machine-readable transcription of the visible labels and comparison limits is in data/references/best_prawas_route_maps.json. The screenshot images themselves are not copied into the repository.
+
+## BEST Prawas timetable and Google Maps sequence check (2026-11-23)
+
+The user supplied two BEST Prawas timetable screenshots for route **394 AS**, from Kannamwar Nagar No.2 to Vikhroli Bus Station (E). The selected date shown is 23-Nov-2026. The screenshots show 16 departures in two partial views: 05:50, 05:57, 06:04, 06:07, 06:08, 06:11, 06:18, 06:23; and 21:49, 21:53, 22:00, 22:10, 22:20, 22:30, 22:40, 22:50. No schedule effective date is displayed, and the screenshots are not archived in the repository.
+
+The candidate GTFS direction is BEST_2898 (direction 1), with 301 trips and eight stops per trip. Its first-stop departures range from 05:50 to 22:50. **Eleven of the 16 visible Prawas times match exactly; five visible Prawas times are absent from this GTFS direction** (05:57, 06:04, 06:11, 06:18, 21:53). The visible first and last departures agree with the GTFS extrema. Because the screenshots are partial, no GTFS-only count is reported and this does not establish a full-day timetable match.
+
+There are three-minute gaps in the displayed list (06:04�06:07 and 06:08�06:11), but the gaps vary across both screenshots; they do not establish a fixed three-minute headway. Every candidate GTFS trip for this direction repeats one time value at all eight stops and is classified as zero-duration. The cross-check therefore concerns origin departures only; it cannot validate intermediate stop times or trip duration. The user reports that the opposite direction was unavailable in Prawas; that availability was not independently checked.
+
+The user also transcribed a Google Maps sequence for the reverse direction under the label **397 A**: 00:11 Vikhroli Station (E), 00:13 Kinnari Hall, then one-minute increments through Janata Market at 00:19. No screenshot, URL, or observation date accompanied the transcription. The stop order from Kinnari Hall through Janata Market matches GTFS route BEST_2901 (labelled **397 AS**, direction 0) at stops 4�10. The reported origin name is only an approximate match; two Vikhroli Station Road (E) stops in the GTFS pattern are not listed, and the GTFS terminal Building No.124 comes after the final reported stop. The closest GTFS origin departure to 00:11 is 00:10, one minute earlier, but the route-label and date differences prevent treating this as an exact schedule match. The candidate GTFS trip repeats 00:10 at all 11 stops, so it cannot validate the reported progression.
+
+| Evidence | Candidate GTFS | Result | Interpretation |
+|---|---|---|---|
+| 394 AS Prawas departures | BEST_2898, direction 1 | 11 of 16 visible times overlap; 5 visible times are reference-only | Partial primary-app cross-check, with timing discrepancies |
+| 397 A Google Maps sequence | BEST_2901 / 397 AS, direction 0 | Kinnari Hall through Janata Market aligns with GTFS stops 4�10; first reported time is one minute later than the nearest GTFS departure | Candidate route-pattern support only; route variant and date remain unconfirmed |
+
+The machine-readable transcription and comparison limits are in [best_route_schedule_observations_2026-11-23.json](../data/references/best_route_schedule_observations_2026-11-23.json). The primary schedule-validation gate remains open: obtain a complete dated timetable, resolve the five Prawas mismatches and the 397 A/397 AS label, and record a reproducible source artifact before treating the schedule as validated.
+

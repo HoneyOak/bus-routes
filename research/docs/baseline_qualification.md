@@ -42,3 +42,9 @@ A separate route 321 LTD check is documented in docs/schedule_reference_review.m
 User-supplied BEST Prawas screenshots show route labels and terminals for 394 AS and 397 AS that correspond to the GTFS route names and endpoints. This helps identify the candidate route records: BEST_2898/BEST_2899 for 394 AS and BEST_2900/BEST_2901 for 397 AS.
 
 The quality report still flags every trip on these routes as zero-duration: 600 of 600 trips for 394 AS and 668 of 668 for 397 AS. The screenshots are map views with no departure times or effective date, so they do not validate the schedule values. See docs/schedule_reference_review.md.
+
+## Prawas timetable and reverse-route sequence evidence (2026-11-23)
+
+The user supplied a partial 394 AS Prawas timetable for Kannamwar Nagar No.2 to Vikhroli Bus Station (E), selected date 2026-11-23. Eleven of 16 visible departures match candidate GTFS direction BEST_2898; five do not. The visible first and last times match the feed extrema, but the incomplete screenshots do not support a full timetable comparison. All 301 candidate GTFS trips still have one repeated time value across all eight stops, so only the origin departures can be compared.
+
+A user-transcribed Google Maps sequence labelled 397 A follows the interior stop order of candidate GTFS 397 AS direction BEST_2901 from Kinnari Hall through Janata Market. The label differs, some GTFS stops are omitted, the GTFS terminal is not shown, and the Google Maps date/artifact is unavailable. The GTFS candidate repeats one time at all 11 stops. See [schedule_reference_review.md](schedule_reference_review.md) and the machine-readable [observation record](../data/references/best_route_schedule_observations_2026-11-23.json). Keep schedule-derived duration out of running-time and passenger-benefit claims.
