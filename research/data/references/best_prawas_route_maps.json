@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "evidence_id": "user_supplied_best_prawas_route_maps_2026-11-23",
+  "evidence_type": "user_supplied_mobile_app_screenshots",
+  "source_app": "BEST Prawas",
+  "observed_on": "2026-11-23",
+  "screenshots_archived_in_repository": false,
+  "screenshot_scope": "Route map view with route label, endpoints, map path and stop markers; no departure timetable is visible.",
+  "schedule_effective_date_displayed": false,
+  "gtfs_snapshot": {
+    "publisher": "BLRTransit",
+    "declared_service_start": "2026-08-19",
+    "declared_service_end": "2027-02-15",
+    "download_date": "unknown"
+  },
+  "route_observations": [
+    {
+      "route_label": "394 AS",
+      "visible_endpoints": [
+        "Kannamwar Nagar No.2",
+        "Vikhroli Bus Station (E)"
+      ],
+      "gtfs_routes": [
+        {
+          "route_id": "BEST_2898",
+          "direction_id": "1",
+          "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
+          "trip_count": 301,
+          "pattern_count": 1,
+          "stops_per_trip": 8,
+          "zero_duration_trips": 301
+        },
+        {
+          "route_id": "BEST_2899",
+          "direction_id": "0",
+          "direction": "Vikhroli Bus Station (E) to Kannamwar Nagar No.2",
+          "trip_count": 299,
+          "pattern_count": 1,
+          "stops_per_trip": 8,
+          "zero_duration_trips": 299
+        }
+      ],
+      "endpoint_assessment": "visible endpoint names agree with the GTFS route terminals",
+      "schedule_assessment": "not assessed; the screenshot shows no departure times"
+    },
+    {
+      "route_label": "397 AS",
+      "visible_endpoints": [
+        "Kannamwar Nagar; Building No.124",
+        "Vikhroli Bus Station (E)"
+      ],
+      "gtfs_routes": [
+        {
+          "route_id": "BEST_2900",
+          "direction_id": "1",
+          "direction": "Kannamwar Nagar; Building No.124 to Vikhroli Bus Station (E)",
+          "trip_count": 333,
+          "pattern_count": 1,
+          "stops_per_trip": 11,
+          "zero_duration_trips": 333
+        },
+        {
+          "route_id": "BEST_2901",
+          "direction_id": "0",
+          "direction": "Vikhroli Bus Station (E) to Kannamwar Nagar; Building No.124",
+          "trip_count": 335,
+          "pattern_count": 1,
+          "stops_per_trip": 11,
+          "zero_duration_trips": 335
+        }
+      ],
+      "endpoint_assessment": "visible endpoint names agree with the GTFS route terminals",
+      "schedule_assessment": "not assessed; the screenshot shows no departure times"
+    }
+  ],
+  "limitations": [
+    "The screenshots are map views, not timetable views; no scheduled departure times or effective date are visible.",
+    "The GTFS stop patterns have endpoint-name agreement with the screenshots, but exact stop-by-stop and path validation is not possible from these images alone.",
+    "The GTFS routes listed have one pattern per direction and all trips calculate to zero scheduled duration because their recorded stop times repeat a single time value."
+  ],
+  "next_step": "Capture the route timetable or static departure list for one of these routes in BEST Prawas, including both directions and any visible effective date or capture date.",
+  "source_listing_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication"
+}
+

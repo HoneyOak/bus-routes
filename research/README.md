@@ -43,3 +43,4 @@ The input extract and source metadata are in data/references/. With the BEST bas
 
 The tool checks the baseline hashes when raw files are available, filters service for the comparison date, and writes the time-by-time CSV and JSON summary under data/processed/best/qualification/. See docs/schedule_reference_review.md for the results and next gate.
 
+The user-supplied BEST Prawas route-map views confirm endpoint labels for the zero-duration routes 394 AS and 397 AS. They show no timetable times; see docs/schedule_reference_review.md and data/references/best_prawas_route_maps.json.
