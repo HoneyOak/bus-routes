@@ -1,12 +1,57 @@
 {
-  "schema_version": 1,
-  "reviewed_on": "2026-11-23",
+  "candidate_sources": [
+    {
+      "classification": "community_feed_record",
+      "id": "mobility_database_mdb_3138",
+      "identity_assessment": "strong_source_family_candidate_exact_local_archive_not_matched",
+      "notes": [
+        "The producer URL and service-date window match a plausible source family.",
+        "The repository describes a separate original-format gtfs.zip and compatibility gtfs_compat.zip.",
+        "Local raw files have 1609 route IDs across four agencies; the registry record reports 935 routes and links to the compatibility archive.",
+        "No source-archive checksum or file-by-file comparison establishes that the supplied raw files came from either repository archive."
+      ],
+      "observed_latest_fetch_date": "2026-08-20",
+      "observed_route_count": 935,
+      "observed_service_end": "2027-02-15",
+      "observed_service_start": "2026-08-19",
+      "producer_url": "https://github.com/croyla/mumbai-gtfs/raw/refs/heads/main/gtfs_compat.zip",
+      "url": "https://mobilitydatabase.org/feeds/gtfs/mdb-3138"
+    },
+    {
+      "classification": "community_source_repository",
+      "id": "croyla_mumbai_gtfs_repository",
+      "license_assessment": "repository_license_observed_underlying_data_scope_unconfirmed",
+      "license_label": "MIT-0",
+      "license_url": "https://github.com/croyla/mumbai-gtfs/blob/main/LICENSE",
+      "notes": [
+        "README describes gtfs.zip as preserving original route variants and gtfs_compat.zip as merging routes for compatibility.",
+        "README names KDMT, TMT, and BEST; the local snapshot also contains VVMT."
+      ],
+      "url": "https://github.com/croyla/mumbai-gtfs"
+    }
+  ],
   "local_snapshot": {
+    "agencies": [
+      "BEST",
+      "TMT",
+      "KDMT",
+      "VVMT"
+    ],
     "audit_package": {
+      "hash_scope": "The audit package ZIP, not the upstream GTFS ZIP.",
       "path": "mumbai-gtfs-audit-package.zip",
       "sha256": "8dd9baa02963f9fbf38725d1e3944a80a56b2792d8cad7fc6708700b92a4a9f4",
-      "size_bytes": 27260240,
-      "hash_scope": "The audit package ZIP, not the upstream GTFS ZIP."
+      "size_bytes": 27260240
+    },
+    "feed_info": {
+      "declared_service_end": "2027-02-15",
+      "declared_service_start": "2026-08-19",
+      "license_file_present": false,
+      "publisher_name": "BLRTransit",
+      "publisher_url": "https://blrtransit.com",
+      "retrieval_timestamp": null,
+      "upstream_archive_sha256": null,
+      "upstream_archive_url": null
     },
     "raw_inputs": [
       "agency.txt",
@@ -17,63 +62,15 @@
       "stops.txt",
       "trips.txt"
     ],
-    "feed_info": {
-      "publisher_name": "BLRTransit",
-      "publisher_url": "https://blrtransit.com",
-      "declared_service_start": "2026-08-19",
-      "declared_service_end": "2027-02-15",
-      "retrieval_timestamp": null,
-      "upstream_archive_url": null,
-      "upstream_archive_sha256": null,
-      "license_file_present": false
-    },
-    "agencies": [
-      "BEST",
-      "TMT",
-      "KDMT",
-      "VVMT"
-    ],
     "route_counts": {
       "all_agencies_route_ids": 1609,
       "best_route_ids": 937
     },
     "status": "exploratory_unverified_snapshot"
   },
-  "candidate_sources": [
-    {
-      "id": "mobility_database_mdb_3138",
-      "url": "https://mobilitydatabase.org/feeds/gtfs/mdb-3138",
-      "classification": "community_feed_record",
-      "producer_url": "https://github.com/croyla/mumbai-gtfs/raw/refs/heads/main/gtfs_compat.zip",
-      "observed_latest_fetch_date": "2026-08-20",
-      "observed_service_start": "2026-08-19",
-      "observed_service_end": "2027-02-15",
-      "observed_route_count": 935,
-      "identity_assessment": "strong_source_family_candidate_exact_local_archive_not_matched",
-      "notes": [
-        "The producer URL and service-date window match a plausible source family.",
-        "The repository describes a separate original-format gtfs.zip and compatibility gtfs_compat.zip.",
-        "Local raw files have 1609 route IDs across four agencies; the registry record reports 935 routes and links to the compatibility archive.",
-        "No source-archive checksum or file-by-file comparison establishes that the supplied raw files came from either repository archive."
-      ]
-    },
-    {
-      "id": "croyla_mumbai_gtfs_repository",
-      "url": "https://github.com/croyla/mumbai-gtfs",
-      "classification": "community_source_repository",
-      "license_label": "MIT-0",
-      "license_url": "https://github.com/croyla/mumbai-gtfs/blob/main/LICENSE",
-      "license_assessment": "repository_license_observed_underlying_data_scope_unconfirmed",
-      "notes": [
-        "README describes gtfs.zip as preserving original route variants and gtfs_compat.zip as merging routes for compatibility.",
-        "README names KDMT, TMT, and BEST; the local snapshot also contains VVMT."
-      ]
-    }
-  ],
+  "next_gate": "Confirm whether the 51 Prawas views represent a complete 394 AS timetable and identify its effective date; investigate the 113 selected-origin times absent from candidate GTFS and the 81 GTFS times not seen in the screenshots; then confirm the A-397/397 AS service identity and obtain an operator-dated schedule or observed running-time data before optimization claims.",
   "official_references": [
     {
-      "id": "best_bkc_routes_pdf",
-      "url": "https://www.bestundertaking.com/assets/pdf/mmrconnect.pdf",
       "coverage": [
         "BKC-10",
         "BKC-11",
@@ -85,28 +82,100 @@
         "BKC-24",
         "BKC-25"
       ],
-      "exact_local_best_route_short_name_match": false,
       "effective_date_identified": false,
+      "exact_local_best_route_short_name_match": false,
+      "id": "best_bkc_routes_pdf",
+      "url": "https://www.bestundertaking.com/assets/pdf/mmrconnect.pdf",
       "validation_status": "limited_reference_no_snapshot_validation"
     },
     {
-      "id": "mcgm_year_book_2025",
-      "url": "https://www.mcgm.gov.in/irj/go/km/docs/documents/HomePage%20Data/Whats%20New/English%20Year%20Book%202025%20Portal.pdf",
-      "observed_best_route_count": 427,
       "as_of_date": "2025-03-31",
+      "id": "mcgm_year_book_2025",
+      "observed_best_route_count": 427,
+      "url": "https://www.mcgm.gov.in/irj/go/km/docs/documents/HomePage%20Data/Whats%20New/English%20Year%20Book%202025%20Portal.pdf",
       "validation_status": "not_directly_comparable_to_gtfs_route_id_count"
     },
     {
-      "id": "best_prawas_app_listing",
-      "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
-      "official_schedule_feature_described": "static timetable for each route",
+      "dated_prawas_timetable_screenshot_examined": true,
       "dated_timetable_examined": true,
-      "validation_status": "partial_user_supplied_departure_list_cross_check_with_mismatches",
+      "id": "best_prawas_app_listing",
+      "official_schedule_feature_described": "static timetable for each route",
       "route_map_screenshots_examined": true,
       "route_map_screenshots_provided_on": "2026-11-23",
-      "dated_prawas_timetable_screenshot_examined": true,
+      "schedule_effective_date_identified": false,
+      "screenshot_count_examined": 51,
       "selected_service_date_examined": "2026-11-23",
-      "schedule_effective_date_identified": false
+      "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
+      "validation_status": "user_supplied_394_as_screenshot_timetable_compared_with_mismatches"
+    }
+  ],
+  "primary_app_observations": [
+    {
+      "assessment": "primary_app_route_map_evidence_only_schedule_validation_pending",
+      "departure_times_visible": false,
+      "effective_date_visible": false,
+      "endpoint_name_match": "matches_gtfs_terminals",
+      "id": "user_supplied_best_prawas_route_maps_2026-11-23",
+      "record_path": "data/references/best_prawas_route_maps.json",
+      "routes": [
+        "394 AS",
+        "397 AS"
+      ],
+      "zero_duration_trips_confirmed_in_gtfs": {
+        "394 AS": 600,
+        "397 AS": 668
+      }
+    },
+    {
+      "assessment": "broad_primary_app_screenshot_sample_with_partial_gtfs_time_overlap",
+      "complete_day_captured": "not_established",
+      "departure_data_path": "data/references/best_prawas_394_as_2026-11-23.csv",
+      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
+      "gtfs_exact_time_overlaps": 220,
+      "gtfs_times_not_seen_in_supplied_screenshots": 81,
+      "id": "user_supplied_best_prawas_394_as_timetable_2026-11-23",
+      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
+      "route": "394 AS",
+      "schedule_effective_date_identified": false,
+      "screenshot_count": 51,
+      "selected_origin_distinct_departure_times": 333,
+      "selected_origin_times_absent_from_gtfs": 113,
+      "selected_service_date": "2026-11-23",
+      "visible_bounds_match_gtfs_extrema": true,
+      "visible_departures": 16,
+      "visible_times_absent_from_gtfs": 5
+    }
+  ],
+  "reviewed_on": "2026-11-23",
+  "schema_version": 1,
+  "secondary_schedule_references": [
+    {
+      "departure_comparison": {
+        "exact_time_overlaps": 31,
+        "gtfs_departures": 57,
+        "gtfs_only": 26,
+        "reference_departures": 33,
+        "reference_only": 2,
+        "status": "partial_secondary_source_check"
+      },
+      "id": "airportbus_best_321_mon_sat",
+      "limitations": [
+        "The reference page says its departures are BEST schedule data carried by Chalo, but the page is not affiliated with BEST.",
+        "The schedule effective date and local GTFS download date are unknown.",
+        "Only first-stop departure times were compared; intermediate times on the reference page are estimated.",
+        "The match does not validate the feed as complete, official, or accurate."
+      ],
+      "methodology_url": "https://airportbus.in/data-sources/",
+      "reference_schedule_retrieved_from_chalo": "2026-10-16",
+      "reviewed_on": "2026-11-12",
+      "route_mapping": {
+        "gtfs_route_id": "BEST_1933",
+        "gtfs_route_short_name": "321 LTD",
+        "mapping_status": "candidate_match_not_exact_identifier_match",
+        "reference_label": "321"
+      },
+      "service_date_compared": "2026-10-16",
+      "url": "https://airportbus.in/mumbai-csmia/to-airport/route/321-mahim/"
     }
   ],
   "unresolved": [
@@ -116,86 +185,21 @@
     "License and attribution scope for the exact snapshot and underlying operator data.",
     "Operator-level completeness and schedule accuracy."
   ],
-  "next_gate": "Obtain a complete, dated 394 AS Prawas departure list or another primary schedule artifact to resolve the five visible time mismatches; obtain the Google Maps screenshot/date and confirm whether 397 A is 397 AS; then compare the complete ordered stops and times, including an available reverse-direction source.",
-  "repository_sync": {
-    "raw_gtfs_files_committed": false,
-    "generated_tables_committed": false,
-    "local_audit_package_committed": false,
-    "note": "Research code and documentation are tracked here. Raw GTFS and generated outputs remain in the local workspace while exact source identity and license scope are unresolved. A small attributed secondary schedule extract is tracked as comparison evidence.",
-    "curated_schedule_reference_extract_committed": true
-  },
-  "secondary_schedule_references": [
-    {
-      "id": "airportbus_best_321_mon_sat",
-      "url": "https://airportbus.in/mumbai-csmia/to-airport/route/321-mahim/",
-      "methodology_url": "https://airportbus.in/data-sources/",
-      "reference_schedule_retrieved_from_chalo": "2026-10-16",
-      "reviewed_on": "2026-11-12",
-      "route_mapping": {
-        "reference_label": "321",
-        "gtfs_route_id": "BEST_1933",
-        "gtfs_route_short_name": "321 LTD",
-        "mapping_status": "candidate_match_not_exact_identifier_match"
-      },
-      "service_date_compared": "2026-10-16",
-      "departure_comparison": {
-        "reference_departures": 33,
-        "gtfs_departures": 57,
-        "exact_time_overlaps": 31,
-        "reference_only": 2,
-        "gtfs_only": 26,
-        "status": "partial_secondary_source_check"
-      },
-      "limitations": [
-        "The reference page says its departures are BEST schedule data carried by Chalo, but the page is not affiliated with BEST.",
-        "The schedule effective date and local GTFS download date are unknown.",
-        "Only first-stop departure times were compared; intermediate times on the reference page are estimated.",
-        "The match does not validate the feed as complete, official, or accurate."
-      ]
-    }
-  ],
-  "primary_app_observations": [
-    {
-      "id": "user_supplied_best_prawas_route_maps_2026-11-23",
-      "record_path": "data/references/best_prawas_route_maps.json",
-      "routes": [
-        "394 AS",
-        "397 AS"
-      ],
-      "endpoint_name_match": "matches_gtfs_terminals",
-      "departure_times_visible": false,
-      "effective_date_visible": false,
-      "zero_duration_trips_confirmed_in_gtfs": {
-        "394 AS": 600,
-        "397 AS": 668
-      },
-      "assessment": "primary_app_route_map_evidence_only_schedule_validation_pending"
-    },
-    {
-      "id": "user_supplied_best_prawas_394_as_timetable_2026-11-23",
-      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
-      "route": "394 AS",
-      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
-      "selected_service_date": "2026-11-23",
-      "visible_departures": 16,
-      "gtfs_exact_time_overlaps": 11,
-      "visible_times_absent_from_gtfs": 5,
-      "visible_bounds_match_gtfs_extrema": true,
-      "complete_day_captured": false,
-      "schedule_effective_date_identified": false,
-      "assessment": "partial_primary_app_departure_cross_check_with_mismatches"
-    }
-  ],
   "user_reported_route_sequence_observations": [
     {
-      "id": "user_transcribed_google_maps_397_a_2026-11-23",
-      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
-      "reported_route_label": "397 A",
+      "assessment": "strong_stop_pattern_candidate_match; route_identifier_and_schedule_date_unconfirmed",
+      "calendar_date_known": false,
       "candidate_gtfs_route_id": "BEST_2901",
       "candidate_gtfs_route_label": "397 AS",
-      "stop_order_alignment": "GTFS stops 4 through 10 align from Kinnari Hall through Janata Market",
-      "date_or_screenshot_available": false,
-      "assessment": "candidate_pattern_match_unverified_route_variant_and_times"
+      "displayed_route_label": "A-397",
+      "id": "user_supplied_google_maps_a_397_2026-11-23",
+      "origin_stop_id_match": "14227",
+      "record_path": "data/references/best_route_schedule_observations_2026-11-23.json",
+      "screenshot_archive_path_local": "data/references/source_artifacts/google_maps_397_a_2026-11-23.png",
+      "screenshot_available": true,
+      "stop_order_alignment": "Origin and GTFS stops 1 through 10 align in order through Janata Market; final Building No.124 stop is not in the explicit transit stop list.",
+      "user_reported_route_label": "397 A"
     }
   ]
 }
+

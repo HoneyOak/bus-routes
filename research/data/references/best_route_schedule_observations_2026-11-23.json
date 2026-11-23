@@ -1,141 +1,97 @@
 {
-  "schema_version": 1,
   "evidence_id": "user_supplied_best_route_schedule_observations_2026-11-23",
-  "reviewed_on": "2026-11-23",
-  "prawas_394_as": {
-    "source": "BEST Prawas screenshot transcription supplied by the user",
-    "route_label_as_displayed": "394 AS",
-    "selected_service_date_as_displayed": "2026-11-23",
-    "schedule_effective_date_displayed": null,
-    "screenshot_capture_timestamp": null,
-    "screenshots_archived_in_repository": false,
-    "direction": {
-      "origin": "Kannamwar Nagar No.2",
-      "destination": "Vikhroli Bus Station (E)"
-    },
-    "visible_departures": {
-      "morning": [
-        "05:50",
-        "05:57",
-        "06:04",
-        "06:07",
-        "06:08",
-        "06:11",
-        "06:18",
-        "06:23"
-      ],
-      "evening": [
-        "21:49",
-        "21:53",
-        "22:00",
-        "22:10",
-        "22:20",
-        "22:30",
-        "22:40",
-        "22:50"
-      ]
-    },
-    "candidate_gtfs_direction": {
-      "route_id": "BEST_2898",
-      "route_short_name": "394 AS",
-      "direction_id": "1",
-      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
-      "trip_count": 301,
-      "stop_count_per_trip": 8,
-      "zero_duration_trips": 301,
-      "distinct_time_values_per_trip": 1,
-      "earliest_gtfs_origin_departure": "05:50:00",
-      "latest_gtfs_origin_departure": "22:50:00"
-    },
-    "visible_time_comparison": {
-      "visible_prawas_departure_count": 16,
-      "exact_time_overlaps": 11,
-      "visible_prawas_times_absent_from_gtfs": [
-        "05:57",
-        "06:04",
-        "06:11",
-        "06:18",
-        "21:53"
-      ],
-      "gtfs_only_departures_assessed": false,
-      "comparison_scope": "Only times visible in the two screenshots were compared; screenshots are partial timetable views."
-    },
-    "limitations": [
-      "The selected date is visible, but no schedule effective date or screenshot capture timestamp is shown.",
-      "The screenshots expose only 16 departures, not the complete daily timetable; a GTFS-only departure count was not compared.",
-      "The local GTFS candidate has one identical time value repeated across every stop-time field for each trip, so this comparison covers first-stop departures only and does not validate intermediate times or journey duration.",
-      "The user reports that the opposite direction was unavailable in BEST Prawas; this availability report was not independently checked."
-    ]
-  },
   "google_maps_397_a": {
-    "source": "User-transcribed Google Maps stop-time sequence; no screenshot or URL supplied",
-    "route_label_as_reported": "397 A",
-    "observed_date": null,
-    "direction_as_reported": "Vikhroli Station (E) toward Janata Market",
-    "reported_stop_times": [
-      {
-        "time": "00:11",
-        "stop": "Vikhroli Station (E)"
-      },
-      {
-        "time": "00:13",
-        "stop": "Kinnari Hall"
-      },
-      {
-        "time": "00:14",
-        "stop": "Kannamwar Nagar No.1"
-      },
-      {
-        "time": "00:15",
-        "stop": "Kannamwar Nagar Hospital"
-      },
-      {
-        "time": "00:16",
-        "stop": "Building No.150"
-      },
-      {
-        "time": "00:17",
-        "stop": "Building No.175"
-      },
-      {
-        "time": "00:18",
-        "stop": "Building No.188"
-      },
-      {
-        "time": "00:19",
-        "stop": "Janata Market"
-      }
-    ],
     "candidate_gtfs_direction": {
+      "candidate_00_10_trip_id": "best_trip_2901_0010",
+      "candidate_00_10_trip_time_fields": "00:10:00 repeated at all 11 stops",
+      "direction": "Vikhroli Bus Station (E) to Kannamwar Nagar; Building No.124",
+      "direction_id": "0",
+      "nearest_candidate_gtfs_origin_departure": "00:10:00",
+      "origin_stop_id": "BEST_14227",
       "route_id": "BEST_2901",
       "route_short_name": "397 AS",
-      "direction_id": "0",
-      "direction": "Vikhroli Bus Station (E) to Kannamwar Nagar; Building No.124",
-      "trip_count": 335,
       "stop_count_per_trip": 11,
-      "zero_duration_trips": 335,
-      "near_midnight_origin_departures": [
-        "00:00:00",
-        "00:10:00",
-        "00:20:00",
-        "00:30:00",
-        "00:40:00",
-        "00:50:00"
-      ],
-      "candidate_00_10_trip_id": "best_trip_2901_0010",
-      "candidate_00_10_trip_time_fields": "00:10:00 repeated at all 11 stops"
+      "trip_count": 335,
+      "zero_duration_trips": 335
     },
+    "day_as_displayed": "Monday",
+    "direction": "Vikhroli Bus Station (E) toward Janata Market (Vikhroli-E)",
+    "itinerary_summary": {
+      "bus_leg_duration_minutes": 8,
+      "bus_leg_stop_count_as_displayed": 9,
+      "displayed_total_duration_minutes": 9,
+      "displayed_window": "12:11 AM (Monday) to 12:20 AM",
+      "last_explicit_transit_stop": "Janata Market (Vikhroli-E) at 00:19",
+      "origin_stop_id_as_displayed": "14227",
+      "origin_stop_name": "Vikhroli Bus Station (E)",
+      "route_headsign_as_displayed": "Kannamwar Nagar or Building No.124",
+      "service_as_displayed": "BEST"
+    },
+    "limitations": [
+      "The itinerary shows Monday but not a calendar date; its date and effective schedule period are unknown.",
+      "Google Maps provides a route-planning itinerary, not a dated BEST operator timetable or observed vehicle running time.",
+      "The route label A-397 differs from the local GTFS label 397 AS, even though the origin stop ID and first ten ordered stops align.",
+      "The route headsign mentions Building No.124, but the explicit transit-stop list ends at Janata Market; a 00:20 stop-level arrival at Building No.124 is not shown.",
+      "The candidate GTFS repeats one origin time across all 11 stops, so the screenshot intermediate times cannot validate it."
+    ],
+    "observed_calendar_date": null,
+    "origin_departure": {
+      "stop": "Vikhroli Bus Station (E)",
+      "stop_id_as_displayed": "14227",
+      "time": "00:11"
+    },
+    "reported_stop_times": [
+      {
+        "stop": "Vikhroli Station Road (E)",
+        "time": "00:11"
+      },
+      {
+        "stop": "Vikhroli Station Road (E)",
+        "time": "00:13"
+      },
+      {
+        "stop": "Kinnari Hall (Kannamwar Nagar)",
+        "time": "00:13"
+      },
+      {
+        "stop": "Kannamwar Nagar No.1",
+        "time": "00:14"
+      },
+      {
+        "stop": "Kannamwar Nagar Hospital",
+        "time": "00:15"
+      },
+      {
+        "stop": "Kannamwar Nagar or Building No.150",
+        "time": "00:16"
+      },
+      {
+        "stop": "Kannamwar Nagar or Building No.175",
+        "time": "00:17"
+      },
+      {
+        "stop": "Kannamwar Nagar or Building No.188",
+        "time": "00:18"
+      },
+      {
+        "stop": "Janata Market (Vikhroli-E)",
+        "time": "00:19"
+      }
+    ],
+    "route_label_as_displayed": "A-397",
+    "route_label_as_previously_reported_by_user": "397 A",
+    "screenshot_archive_path": "data/references/source_artifacts/google_maps_397_a_2026-11-23.png",
+    "screenshot_archived_in_repository": false,
+    "screenshot_archived_in_workspace": true,
+    "source": "User-supplied Google Maps transit itinerary screenshot",
     "stop_pattern_alignment": {
-      "aligned_gtfs_stop_sequence": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "aligned_gtfs_stop_names": [
+      "assessment": "Strong candidate stop-pattern match to BEST_2901; exact service identifier remains unconfirmed.",
+      "explicit_transit_stop_list_matches_first_ten_gtfs_stops_in_order": true,
+      "gtfs_terminal_after_last_listed_stop": "Kannamwar Nagar; Building No.124",
+      "matched_gtfs_stop_names": [
+        "Vikhroli Bus Station (E)",
+        "Vikhroli Station Road (E)",
+        "Vikhroli Station Road (E)",
         "Kinnari Hall (Kannamwar Nagar)",
         "Kannamwar Nagar No.1",
         "Kannamwar Nagar Hospital",
@@ -144,27 +100,116 @@
         "Kannamwar Nagar; Building No.188",
         "Janata Market (Vikhroli-E)"
       ],
-      "gtfs_stops_not_listed_between_terminal_and_kinnari_hall": [
-        "Vikhroli Station Road (E)",
-        "Vikhroli Station Road (E)"
+      "matched_gtfs_stop_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
       ],
-      "gtfs_terminal_after_last_reported_stop": "Kannamwar Nagar; Building No.124",
-      "terminal_name_match": "approximate_only; user reports Vikhroli Station (E), GTFS begins Vikhroli Bus Station (E)",
-      "route_label_match": "not established; user reports 397 A while the GTFS and Prawas map evidence say 397 AS"
+      "terminal_time_displayed_as_a_stop_time": false
     },
     "time_comparison": {
-      "reported_first_time": "00:11",
-      "nearest_candidate_gtfs_origin_departure": "00:10:00",
       "difference_minutes": 1,
       "exact_first_stop_match": false,
-      "intermediate_time_validation": "not possible against the candidate GTFS because all 11 recorded stop times repeat a single value"
+      "intermediate_time_validation": "Not possible because candidate GTFS trip repeats 00:10 at all 11 stops.",
+      "nearest_candidate_gtfs_origin_departure": "00:10:00",
+      "reported_origin_time": "00:11"
+    }
+  },
+  "overall_assessment": "The 51 BEST Prawas screenshots yield 333 distinct selected-origin departure times after overlap deduplication and alternate-origin filtering. Of those, 220 overlap the 301 distinct candidate GTFS departures; 113 Prawas times are absent from the candidate, while 81 candidate times are not seen in the screenshots. The Google Maps A-397 itinerary now provides a strong stop-pattern candidate match to the first ten stops of BEST_2901/397 AS direction 0, but does not establish an exact route identifier, calendar date, or stop-level schedule.",
+  "prawas_394_as": {
+    "candidate_gtfs_direction": {
+      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
+      "direction_id": "1",
+      "distinct_time_values_per_trip": 1,
+      "earliest_gtfs_origin_departure": "05:50:00",
+      "latest_gtfs_origin_departure": "22:50:00",
+      "route_id": "BEST_2898",
+      "route_short_name": "394 AS",
+      "stop_count_per_trip": 8,
+      "trip_count": 301,
+      "zero_duration_trips": 301
+    },
+    "direction": {
+      "destination": "Vikhroli Bus Station (E)",
+      "origin": "Kannamwar Nagar No.2"
     },
     "limitations": [
-      "This is user-supplied text, not an archived Google Maps screenshot or reproducible URL; its date and whether the times are scheduled, estimated, or live are unknown.",
-      "The reported route label 397 A is not an exact match for the local route label 397 AS.",
-      "The list omits two GTFS stops near Vikhroli and stops at Janata Market before the GTFS terminal Building No.124.",
-      "The local GTFS candidate has zero-duration stop-time fields; the reported progression cannot be independently validated as schedule or running-time evidence."
-    ]
+      "The Prawas screen shows the selected service date 2026-11-23, but no schedule effective date is visible.",
+      "The 51 screenshot pages overlap and some page edges are clipped; full-day schedule completeness is not established.",
+      "Nine distinct times appear with the alternate origin label. Six appear only with that label and were excluded; three times also have a selected-origin row.",
+      "This compares visible first-stop times only. The candidate GTFS contains 301 trips with one repeated time value at all eight stops, so intermediate schedule times and journey duration cannot be validated.",
+      "The user reports that the opposite 394 AS direction was unavailable in Prawas; this availability report was not independently verified."
+    ],
+    "route_label_as_displayed": "394 AS",
+    "schedule_effective_date_displayed": null,
+    "screenshot_capture_timestamp": null,
+    "screenshot_count": 51,
+    "screenshots_archive_path": "data/references/source_artifacts/prawas_394_as_2026-11-23/",
+    "screenshots_archived_in_repository": false,
+    "screenshots_archived_in_workspace": true,
+    "selected_service_date_as_displayed": "2026-11-23",
+    "source": "User-supplied screenshots of the BEST Prawas app timetable",
+    "visible_departures": {
+      "alternate_origin_label": "Vikhroli Station Road (E) - Vikhroli Bus Station (E)",
+      "alternate_origin_observation_times": [
+        "12:13",
+        "12:39",
+        "13:17",
+        "13:38",
+        "14:20",
+        "14:38",
+        "15:24",
+        "15:41",
+        "16:36"
+      ],
+      "alternate_origin_only_times_excluded": [
+        "12:13",
+        "13:17",
+        "13:38",
+        "14:38",
+        "15:24",
+        "15:41"
+      ],
+      "consecutive_visible_departure_gap_minutes": {
+        "maximum": 10,
+        "mean": 3.072,
+        "median": 3,
+        "minimum": 1
+      },
+      "data_file": "best_prawas_394_as_2026-11-23.csv",
+      "deduplication_note": "Times repeated across overlapping screenshots were deduplicated. Rows labeled only with the alternate origin were excluded.",
+      "distinct_selected_origin_departure_times": 333,
+      "distinct_times_across_all_visible_origin_labels": 339,
+      "first_visible_time": "05:50",
+      "last_visible_time": "22:50",
+      "same_minute_also_seen_at_selected_origin": [
+        "12:39",
+        "14:20",
+        "16:36"
+      ],
+      "transcribed_time_entries_before_deduplication": 410
+    },
+    "visible_time_comparison": {
+      "candidate_gtfs_times_not_seen_in_supplied_screenshots": 81,
+      "comparison_output_local": "data/processed/best/qualification/schedule_comparisons/best_prawas_394_as_2026-11-23/comparison.json",
+      "comparison_scope": "Distinct first-stop departure times. Screenshot coverage is not certified complete; GTFS times not seen in screenshots are not classified as true schedule mismatches.",
+      "exact_time_overlaps": 220,
+      "gtfs_distinct_origin_departures": 301,
+      "gtfs_time_match_share": 0.7309,
+      "reference_distinct_departure_times": 333,
+      "reference_time_match_share": 0.6607,
+      "reference_times_absent_from_candidate_gtfs": 113,
+      "visible_first_and_last_times_match_gtfs_extrema": true
+    }
   },
-  "overall_assessment": "The Prawas screenshots establish a partial first-stop timetable comparison for 394 AS with 11 of 16 visible times matching. The Google Maps transcription supports a candidate stop-order alignment for the reverse 397 AS pattern, but does not yet identify the exact 397 route variant or validate times."
+  "reviewed_on": "2026-11-23",
+  "schema_version": 1
 }
+

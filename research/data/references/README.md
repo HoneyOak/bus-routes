@@ -1,10 +1,11 @@
 # Curated timetable references
 
-This folder contains small, manually transcribed reference extracts used for cross-source checks. Each extract must have a metadata file that records the source URL, source's stated retrieval date, observation date, route label, service days, effective date if known, and limitations.
+This folder contains attributed, manually transcribed schedule evidence used for cross-source checks. Per-source metadata records route, direction, displayed date, effective-date status, method, and limitations. Reference files do not replace the immutable GTFS inputs in data/raw/, and time overlap does not establish operator approval or feed accuracy.
 
-The files here are reference evidence, not replacements for the immutable GTFS inputs in data/raw/. Do not infer operator approval from a third-party mirror. The current 321 extract is attributed to the source page and retains the distinction between its stated Chalo retrieval date and the date we reviewed the page.
+- 321 LTD secondary reference (best_321_mon_sat.csv) is a partial extract attributed to a BEST schedule carried by Chalo, as described by airportbus.in.
+- 394 AS Prawas departure extract (best_prawas_394_as_2026-11-23.csv) contains 333 distinct selected-origin times transcribed from 51 user-supplied screenshots. See its metadata (best_prawas_394_as_2026-11-23.json) and the combined route observation record (best_route_schedule_observations_2026-11-23.json).
+- Prawas route-map observations (best_prawas_route_maps.json) record displayed endpoint labels for 394 AS and 397 AS.
+- The user-supplied Google Maps screenshot for A-397 is transcribed in the combined observation record. Its origin stop ID and first ten listed GTFS stops align with candidate route BEST_2901 (397 AS, direction 0); the displayed label and calendar date remain unresolved.
 
-The GTFS archive's exact source version and license scope remain unresolved. Raw GTFS and generated outputs are not part of this reference folder.
-
-The user-supplied route timetable and stop-sequence transcription are recorded in [best_route_schedule_observations_2026-11-23.json](best_route_schedule_observations_2026-11-23.json). It records the 16 visible 394 AS Prawas departures and their partial match to the local GTFS candidate, plus the user-reported Google Maps sequence labelled 397 A and its candidate 397 AS stop-pattern alignment. The Prawas screenshots and Google Maps screenshot/URL are not archived, so the file distinguishes what was visible or transcribed from unresolved dates and route identity.
+The Prawas and Google Maps screenshot originals are preserved in source_artifacts/ in the local workspace with a SHA-256 manifest. They are excluded from GitHub because the repository stores curated text evidence, not attached UI screenshots. No source screenshot is edited. The timetable effective date, full-day completeness, exact upstream GTFS version, and license scope remain unresolved.
 

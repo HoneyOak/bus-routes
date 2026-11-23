@@ -1,0 +1,58 @@
+{
+  "alternate_origin_label": "Vikhroli Station Road (E) - Vikhroli Bus Station (E)",
+  "alternate_origin_only_times_excluded": [
+    "12:13",
+    "13:17",
+    "13:38",
+    "14:38",
+    "15:24",
+    "15:41"
+  ],
+  "alternate_origin_time_rows": [
+    "12:13",
+    "12:39",
+    "13:17",
+    "13:38",
+    "14:20",
+    "14:38",
+    "15:24",
+    "15:41",
+    "16:36"
+  ],
+  "distinct_selected_origin_departures": 333,
+  "distinct_visible_times_all_origins": 339,
+  "gtfs_direction_id": "1",
+  "gtfs_origin_stop_id": "BEST_14110",
+  "gtfs_route_id": "BEST_2898",
+  "gtfs_route_short_name": "394 AS",
+  "limitations": [
+    "The screenshots show the selected service date 2026-11-23, but not a schedule effective date.",
+    "Screenshots cover visible timetable windows from 05:50 to 22:50 but contain overlap and some clipped page edges; completeness of the full-day list is not established.",
+    "The source artifact archive is local to the user's workspace and is not tracked in GitHub.",
+    "The supplied GTFS direction has one identical time value repeated at all eight stops per trip, so only first-stop departure times can be compared."
+  ],
+  "observed_on": "2026-11-23",
+  "reference_data_file": "best_prawas_394_as_2026-11-23.csv",
+  "reference_id": "best_prawas_394_as_2026-11-23",
+  "reference_origin_stop": "Kannamwar Nagar No.2",
+  "reference_route_label": "394 AS",
+  "reference_service_days": [
+    "Monday"
+  ],
+  "same_minute_also_seen_at_selected_origin": [
+    "12:39",
+    "14:20",
+    "16:36"
+  ],
+  "schedule_effective_date": null,
+  "schema_version": 1,
+  "screenshot_count": 51,
+  "service_date_compared": "2026-11-23",
+  "source_artifact_archive_in_github": false,
+  "source_artifact_archive_local": "data/references/source_artifacts/prawas_394_as_2026-11-23/",
+  "source_name": "BEST Prawas app timetable, user-supplied screenshots",
+  "source_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
+  "transcribed_time_entries_before_deduplication": 410,
+  "transcription_method": "Manual transcription; times repeated across overlapping screenshots were deduplicated; rows labeled only with the alternate origin were excluded from the selected-origin departure list."
+}
+
