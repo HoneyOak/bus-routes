@@ -62,3 +62,9 @@ A preliminary cross-source test compared the 321 LTD GTFS route (BEST_1933, Mahi
 For Friday 2026-10-16, the GTFS calendar activates 57 first-stop departures; the reference lists 33. Thirty-one departure times overlap, with 2 reference-only and 26 GTFS-only. This is partial overlap between candidate route representations. The labels differ, the reference effective date is unknown, and the local feed download date is unknown. The comparator, attributed extract, and route review are documented under docs/schedule_reference_review.md and data/references/.
 
 This does not meet the primary-source validation gate. Obtain a dated BEST Prawas timetable or BEST schedule export and compare a zero-duration route, an ordinary route, and a post-midnight trip before treating route-level schedule values as validated.
+
+## BEST Prawas route-map observations (2026-11-23)
+
+The user supplied route-map screenshots from BEST Prawas for 394 AS and 397 AS. Both screens show endpoint labels that agree with the corresponding GTFS routes. The GTFS has 8 stops per trip for 394 AS and 11 for 397 AS; all 1,268 trips across both routes and directions are classified as zero-duration because their time fields repeat a single value.
+
+These map views establish endpoint-name correspondence only. They do not show departure times, a timetable effective date, or enough detail for a formal stop-by-stop or path comparison. The primary schedule-validation gate therefore remains open. See data/references/best_prawas_route_maps.json.
