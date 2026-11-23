@@ -100,7 +100,7 @@
       "id": "best_prawas_app_listing",
       "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
       "official_schedule_feature_described": "static timetable for each route",
-      "dated_timetable_examined": false,
+      "dated_timetable_examined": true,
       "validation_status": "partial_user_supplied_departure_list_cross_check_with_mismatches",
       "route_map_screenshots_examined": true,
       "route_map_screenshots_provided_on": "2026-11-23",
