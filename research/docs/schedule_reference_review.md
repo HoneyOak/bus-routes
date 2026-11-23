@@ -46,3 +46,15 @@ Run python -m unittest discover -s tests -v to run the project tests.
 
 Obtain and archive a dated route timetable directly from BEST Prawas or BEST. First compare one route whose trips have zero scheduled duration, such as 394 AS or 397 AS, then include an ordinary route and a post-midnight trip. Record the operator route label, direction, stop sequence, effective date, capture date, source artifact checksum, and data rights. The official reference is required before treating route-level schedule values as validated.
 
+## BEST Prawas route-map check (2026-11-23)
+
+The user supplied two BEST Prawas map-view screenshots. The 394 AS screen shows Kannamwar Nagar No.2 and Vikhroli Bus Station (E); the 397 AS screen shows Kannamwar Nagar, Building No.124 and Vikhroli Bus Station (E). These visible terminal labels agree with the corresponding GTFS route endpoints.
+
+| Route | GTFS directions | Trips | Stops per trip | Zero-duration trips |
+|---|---:|---:|---:|---:|
+| 394 AS | 2 | 600 | 8 | 600 |
+| 397 AS | 2 | 668 | 11 | 668 |
+
+Each direction has one reconstructed GTFS stop pattern. The screenshots show maps and endpoint names but no departure times or schedule effective date. They support route identity and terminal-name checks; they do not resolve the zero-duration schedules or provide a stop-by-stop validation. The GTFS feed also lacks shapes.txt, so its full road alignment cannot be compared to the app line from the supplied files.
+
+A machine-readable transcription of the visible labels and comparison limits is in data/references/best_prawas_route_maps.json. The screenshot images themselves are not copied into the repository.
