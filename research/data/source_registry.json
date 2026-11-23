@@ -101,7 +101,9 @@
       "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
       "official_schedule_feature_described": "static timetable for each route",
       "dated_timetable_examined": false,
-      "validation_status": "candidate_for_manual_schedule_sample"
+      "validation_status": "route_endpoint_identity_only_no_departure_times",
+      "route_map_screenshots_examined": true,
+      "route_map_screenshots_provided_on": "2026-11-23"
     }
   ],
   "unresolved": [
@@ -111,7 +113,7 @@
     "License and attribution scope for the exact snapshot and underlying operator data.",
     "Operator-level completeness and schedule accuracy."
   ],
-  "next_gate": "Obtain a dated primary BEST Prawas timetable or BEST schedule export and compare a reproducible sample that includes a zero-duration route, an ordinary route, and a post-midnight trip.",
+  "next_gate": "Capture dated departure timetables for BEST Prawas routes 394 AS or 397 AS, in both directions if available; then compare scheduled departures against the GTFS service date and retain the capture or effective date.",
   "repository_sync": {
     "raw_gtfs_files_committed": false,
     "generated_tables_committed": false,
@@ -147,6 +149,24 @@
         "Only first-stop departure times were compared; intermediate times on the reference page are estimated.",
         "The match does not validate the feed as complete, official, or accurate."
       ]
+    }
+  ],
+  "primary_app_observations": [
+    {
+      "id": "user_supplied_best_prawas_route_maps_2026-11-23",
+      "record_path": "data/references/best_prawas_route_maps.json",
+      "routes": [
+        "394 AS",
+        "397 AS"
+      ],
+      "endpoint_name_match": "matches_gtfs_terminals",
+      "departure_times_visible": false,
+      "effective_date_visible": false,
+      "zero_duration_trips_confirmed_in_gtfs": {
+        "394 AS": 600,
+        "397 AS": 668
+      },
+      "assessment": "primary_app_route_map_evidence_only_schedule_validation_pending"
     }
   ]
 }
