@@ -1,4 +1,6 @@
 /data/raw/
 /data/processed/
+/data/references/source_artifacts/
 **/__pycache__/
 *.py[cod]
+
