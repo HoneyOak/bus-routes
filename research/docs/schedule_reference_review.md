@@ -10,7 +10,7 @@ The route 321 comparison is a partial secondary-source check. It is useful as a 
 
 The reviewed airportbus.in page labels the service 321 from Mahim Bus Station to CSMIA Terminal 2 and says the route continues to Barve Nagar. Its data-source page says the displayed Mumbai departures are BEST schedules carried by Chalo, retrieved 2026-10-16. It also says only the first stop is timetabled on the route page; intermediate times are estimated. airportbus.in states that it is not affiliated with BEST or the airport.
 
-The official BEST Prawas app listing describes a static timetable for each route. A dated timetable from that app was not available in the reviewed web sources, so the comparison below remains a secondary copy of schedule information attributed to Chalo.
+The BEST Prawas app listing identifies BEST Undertaking as the app developer and describes a static timetable for each route. The user later supplied dated Prawas timetable screenshots for route 394 AS; those are primary app-screen evidence, though the schedule effective date and completeness remain unknown.
 
 The reference CSV preserves the 33 Monday-to-Saturday departures shown for Mahim Bus Station. Its metadata records the page URL, the page's stated Chalo retrieval date, our observation date, and limitations. The route page does not state a schedule effective date.
 
@@ -86,3 +86,26 @@ The Prawas departure CSV and source metadata are in [best_prawas_394_as_2026-11-
 
 Before schedule values inform optimization, confirm screenshot completeness and timetable effective date with BEST/Prawas, investigate observed time differences against an exact feed version, and obtain demand and observed running-time data separately.
 
+
+
+## Feed source selection and effectiveness decision (2026-11-24)
+
+### Selected reference source
+
+The selected primary source for schedule checks is the BEST Prawas app, published under BEST Undertaking. Its Google Play listing says BEST Undertaking developed the app and lists a static timetable for each route ([BEST Prawas listing](https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication)). This verifies the operator-controlled app as the reference channel. It is an app interface, not a publicly downloadable GTFS archive. The source search did not identify a public BEST-issued GTFS download.
+
+### Candidate GTFS status and service-date check
+
+The available GTFS remains the local exploratory BLRTransit snapshot. The corresponding Mobility Database record labels the feed “Community Feed,” links to a community repository, and records its latest fetch as 2026-08-20 with a declared service period of 2026-08-19 through 2027-02-15 ([Mobility Database record](https://mobilitydatabase.org/feeds/gtfs/mdb-3138), [producer repository](https://github.com/croyla/mumbai-gtfs)). The local `calendar.txt` includes service on all seven days through 2027-02-15, so the selected Prawas service date, Monday 2026-11-23, is covered by the declared calendar. This is a calendar-range check only: `calendar_dates.txt` is missing, and the exact local archive has not been matched to the upstream version.
+
+### 394 AS departure comparison
+
+For Kannamwar Nagar No.2 to Vikhroli Bus Station (E), the supplied Prawas screenshots show 333 distinct selected-origin departures on the selected date. Candidate GTFS route BEST_2898, direction 1, has 301 distinct departures. Exactly 220 times overlap: 66.1% of departures visible in Prawas and 73.1% of candidate GTFS departures are represented in the screenshots. The 113 Prawas times absent from GTFS are concrete discrepancies, subject to transcription and route-mapping limits. The 81 GTFS times not shown in the screenshots are not classified as errors because screenshot completeness is unproven. All 301 candidate trips repeat the same timestamp at all eight stops, producing zero scheduled duration; those values cannot supply running times.
+
+### 397 A route-pattern check
+
+The Google Maps screenshot for A-397 shows 00:11 from Vikhroli Bus Station (E) and the same first ten stop names/order as candidate BEST_2901 / 397 AS direction 0 through Janata Market. GTFS has a 00:10 departure for that candidate trip, and the screenshot's bus leg is shown as eight minutes. Since the candidate repeats one time across all 11 stops and the screenshot does not display a calendar date, this is stop-pattern support only, not a validation of schedule accuracy or actual running time.
+
+### Decision
+
+The current GTFS is not suitable for schedule-based operational optimization: its exact upstream snapshot is unresolved, the 394 AS check has substantial unmatched primary-app departures, and its sampled stop times encode no usable travel duration. Keep it for exploratory route-pattern mapping. The Prawas screenshots establish a useful operator-source baseline for the observed direction, but not a complete or versioned network timetable. Passenger demand, observed running times, capacity, costs, and equity impacts still require separate evidence before evaluating an optimization proposal.
