@@ -42,10 +42,9 @@ With the baseline built, run python scripts/compare_best_schedule.py. The script
 
 Run python -m unittest discover -s tests -v to run the project tests.
 
-## Next validation gate
+## Next validation gate (updated 2026-11-24)
 
-Obtain and archive a dated route timetable directly from BEST Prawas or BEST. First compare one route whose trips have zero scheduled duration, such as 394 AS or 397 AS, then include an ordinary route and a post-midnight trip. Record the operator route label, direction, stop sequence, effective date, capture date, source artifact checksum, and data rights. The official reference is required before treating route-level schedule values as validated.
-
+BEST Prawas is now the selected primary timetable reference, but the current screenshots do not establish a complete service day or timetable effective date. Obtain a complete operator-sourced timetable export, or a complete Prawas timetable capture with its effective date and service-day rules. Record the operator route label, direction, stop sequence, effective date, capture date, source artifact checksum, and data rights. Include a route with positive scheduled durations and a post-midnight trip before treating route-level timing as validated.
 ## BEST Prawas route-map check (2026-11-23)
 
 The user supplied two BEST Prawas map-view screenshots. The 394 AS screen shows Kannamwar Nagar No.2 and Vikhroli Bus Station (E); the 397 AS screen shows Kannamwar Nagar, Building No.124 and Vikhroli Bus Station (E). These visible terminal labels agree with the corresponding GTFS route endpoints.
@@ -92,7 +91,7 @@ Before schedule values inform optimization, confirm screenshot completeness and 
 
 ### Selected reference source
 
-The selected primary source for schedule checks is the BEST Prawas app, published under BEST Undertaking. Its Google Play listing says BEST Undertaking developed the app and lists a static timetable for each route ([BEST Prawas listing](https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication)). This verifies the operator-controlled app as the reference channel. It is an app interface, not a publicly downloadable GTFS archive. The source search did not identify a public BEST-issued GTFS download.
+The selected primary source for schedule checks is the BEST Prawas app. Its Google Play listing displays developer name THE BEST, describes the app as developed by BEST Undertaking, and lists a static timetable for each route ([BEST Prawas listing](https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication)). That supports treating the app as the primary operator timetable reference. It is an app interface, not a publicly downloadable GTFS archive. The source search did not identify a public BEST-issued GTFS download.
 
 ### Candidate GTFS status and service-date check
 
