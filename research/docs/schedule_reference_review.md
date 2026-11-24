@@ -10,7 +10,7 @@ The route 321 comparison is a partial secondary-source check. It is useful as a 
 
 The reviewed airportbus.in page labels the service 321 from Mahim Bus Station to CSMIA Terminal 2 and says the route continues to Barve Nagar. Its data-source page says the displayed Mumbai departures are BEST schedules carried by Chalo, retrieved 2026-10-16. It also says only the first stop is timetabled on the route page; intermediate times are estimated. airportbus.in states that it is not affiliated with BEST or the airport.
 
-The BEST Prawas app listing identifies BEST Undertaking as the app developer and describes a static timetable for each route. The user later supplied dated Prawas timetable screenshots for route 394 AS; those are primary app-screen evidence, though the schedule effective date and completeness remain unknown.
+The BEST Prawas app listing displays developer name THE BEST, says BEST Undertaking developed the app, and describes a static timetable for each route. The user later supplied dated Prawas timetable screenshots for route 394 AS; those are primary app-screen evidence, though the schedule effective date and completeness remain unknown.
 
 The reference CSV preserves the 33 Monday-to-Saturday departures shown for Mahim Bus Station. Its metadata records the page URL, the page's stated Chalo retrieval date, our observation date, and limitations. The route page does not state a schedule effective date.
 
@@ -85,8 +85,6 @@ The Prawas departure CSV and source metadata are in [best_prawas_394_as_2026-11-
 
 Before schedule values inform optimization, confirm screenshot completeness and timetable effective date with BEST/Prawas, investigate observed time differences against an exact feed version, and obtain demand and observed running-time data separately.
 
-
-
 ## Feed source selection and effectiveness decision (2026-11-24)
 
 ### Selected reference source
@@ -99,7 +97,7 @@ The available GTFS remains the local exploratory BLRTransit snapshot. The corres
 
 ### 394 AS departure comparison
 
-For Kannamwar Nagar No.2 to Vikhroli Bus Station (E), the supplied Prawas screenshots show 333 distinct selected-origin departures on the selected date. Candidate GTFS route BEST_2898, direction 1, has 301 distinct departures. Exactly 220 times overlap: 66.1% of departures visible in Prawas and 73.1% of candidate GTFS departures are represented in the screenshots. The 113 Prawas times absent from GTFS are concrete discrepancies, subject to transcription and route-mapping limits. The 81 GTFS times not shown in the screenshots are not classified as errors because screenshot completeness is unproven. All 301 candidate trips repeat the same timestamp at all eight stops, producing zero scheduled duration; those values cannot supply running times.
+For Kannamwar Nagar No.2 to Vikhroli Bus Station (E), the supplied Prawas screenshots show 333 distinct selected-origin departures on the selected date. Candidate GTFS route BEST_2898, direction 1, has 301 distinct departures. Exactly 220 times overlap: 66.1% of departures visible in Prawas and 73.1% of candidate GTFS departures are represented in the screenshots. The 113 Prawas times absent from GTFS are exact mismatches between the two representations, subject to transcription and route-mapping limits; the evidence does not establish which source explains the difference. The 81 GTFS times not shown in the screenshots are not classified as errors because screenshot completeness is unproven. All 301 candidate trips repeat the same timestamp at all eight stops, producing zero scheduled duration; those values cannot supply running times.
 
 ### 397 A route-pattern check
 
