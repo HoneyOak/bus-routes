@@ -45,6 +45,7 @@ Run python -m unittest discover -s tests -v to run the project tests.
 ## Next validation gate (updated 2026-11-24)
 
 BEST Prawas is now the selected primary timetable reference, but the current screenshots do not establish a complete service day or timetable effective date. Obtain a complete operator-sourced timetable export, or a complete Prawas timetable capture with its effective date and service-day rules. Record the operator route label, direction, stop sequence, effective date, capture date, source artifact checksum, and data rights. Include a route with positive scheduled durations and a post-midnight trip before treating route-level timing as validated.
+
 ## BEST Prawas route-map check (2026-11-23)
 
 The user supplied two BEST Prawas map-view screenshots. The 394 AS screen shows Kannamwar Nagar No.2 and Vikhroli Bus Station (E); the 397 AS screen shows Kannamwar Nagar, Building No.124 and Vikhroli Bus Station (E). These visible terminal labels agree with the corresponding GTFS route endpoints.
