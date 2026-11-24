@@ -51,7 +51,6 @@ The user supplied 51 BEST Prawas screenshots for route 394 AS, direction Kannamw
 
 A Google Maps itinerary labeled A-397 shows origin stop ID 14227 and the first ten stops of candidate BEST_2901 / 397 AS direction 0 in the same order through Janata Market. Its route headsign mentions Building No.124, but the explicit stop list ends at Janata Market. The screenshot says Monday without a calendar date. See [the schedule reference review](docs/schedule_reference_review.md) and the [machine-readable evidence](data/references/best_route_schedule_observations_2026-11-23.json). These schedule comparisons do not establish passenger demand, actual running time, or operating feasibility.
 
-
 ## Feed source decision (2026-11-24)
 
 BEST Prawas is selected as the primary operator timetable reference because its Google Play listing displays developer name THE BEST, describes the app as developed by BEST Undertaking, and lists static timetables for each route. No public operator-issued BEST GTFS download was located; the available BLRTransit snapshot remains exploratory. For the 23-Nov-2026 394 AS comparison, 220 of 333 distinct Prawas departures overlap the candidate GTFS (66.1%). The candidate marks that date active in its declared calendar, but this does not establish schedule currency. Its 301 trips for the compared direction have zero scheduled duration. Keep the feed for route-pattern exploration, not operational schedule optimization. See [the source-selection and effectiveness review](docs/schedule_reference_review.md).
