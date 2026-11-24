@@ -68,7 +68,7 @@
     },
     "status": "exploratory_unverified_snapshot"
   },
-  "next_gate": "Confirm whether the 51 Prawas views represent a complete 394 AS timetable and identify its effective date; investigate the 113 selected-origin times absent from candidate GTFS and the 81 GTFS times not seen in the screenshots; then confirm the A-397/397 AS service identity and obtain an operator-dated schedule or observed running-time data before optimization claims.",
+  "next_gate": "Obtain a complete, dated, operator-sourced timetable export (or a complete Prawas timetable capture with effective date and service-day rules) for a representative route, then collect observed running times and stop/time-period passenger counts before schedule-based optimization.",
   "official_references": [
     {
       "coverage": [
@@ -106,7 +106,11 @@
       "screenshot_count_examined": 51,
       "selected_service_date_examined": "2026-11-23",
       "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
-      "validation_status": "user_supplied_394_as_screenshot_timetable_compared_with_mismatches"
+      "validation_status": "user_supplied_394_as_screenshot_timetable_compared_with_mismatches",
+      "publisher": "BEST Undertaking",
+      "operator_controlled_app_listing_verified": true,
+      "bulk_gtfs_download_url_identified": false,
+      "selected_service_date": "2026-11-23"
     }
   ],
   "primary_app_observations": [
@@ -200,6 +204,63 @@
       "stop_order_alignment": "Origin and GTFS stops 1 through 10 align in order through Janata Market; final Building No.124 stop is not in the explicit transit stop list.",
       "user_reported_route_label": "397 A"
     }
-  ]
+  ],
+  "feed_selection": {
+    "reviewed_on": "2026-11-24",
+    "decision": "No public operator-issued BEST GTFS feed was located. Select BEST Prawas as the primary operator timetable reference, while retaining the BLRTransit multi-operator GTFS snapshot as an exploratory candidate only.",
+    "selected_primary_reference": {
+      "id": "best_prawas_official_operator_app",
+      "operator": "BEST Undertaking",
+      "source_type": "operator app timetable reference",
+      "format": "BEST Prawas application; not a publicly downloadable bulk GTFS feed",
+      "listing_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
+      "verification_basis": "The Google Play listing identifies BEST Undertaking as developer and describes the app as developed by BEST Undertaking, with a static timetable for each route.",
+      "screenshot_capture_date": "2026-11-23",
+      "selected_service_date": "2026-11-23",
+      "schedule_effective_date_identified": false,
+      "bulk_download_url_identified": false
+    },
+    "candidate_gtfs_assessment": {
+      "id": "local_blrtransit_snapshot",
+      "status": "exploratory_unverified_snapshot",
+      "declared_service_window": [
+        "2026-08-19",
+        "2027-02-15"
+      ],
+      "calendar_active_on_selected_service_date": true,
+      "basis": "calendar.txt declares service on all seven weekdays through the selected date; calendar_dates.txt is absent, and the exact local upstream archive/version remains unmatched.",
+      "external_record": "https://mobilitydatabase.org/feeds/gtfs/mdb-3138",
+      "external_record_classification": "Community Feed",
+      "external_record_latest_fetch_date": "2026-08-20",
+      "producer_repository": "https://github.com/croyla/mumbai-gtfs"
+    },
+    "effectiveness_check": {
+      "route": "394 AS",
+      "direction": "Kannamwar Nagar No.2 to Vikhroli Bus Station (E)",
+      "selected_service_date": "2026-11-23",
+      "candidate_gtfs_route_id": "BEST_2898",
+      "candidate_gtfs_direction_id": 1,
+      "candidate_gtfs_distinct_departures": 301,
+      "app_screenshot_distinct_departures": 333,
+      "exact_departure_overlaps": 220,
+      "share_of_app_departures_found_in_gtfs": 0.6607,
+      "share_of_gtfs_departures_seen_in_app_screenshots": 0.7309,
+      "app_departures_absent_from_gtfs": 113,
+      "gtfs_departures_not_seen_in_screenshots": 81,
+      "unmatched_gtfs_interpretation": "Not classified as false departures because completeness of the screenshot set has not been established.",
+      "gtfs_trips_with_zero_scheduled_duration": 301,
+      "stops_per_gtfs_trip": 8,
+      "assessment": "Partial first-stop departure overlap; schedule completeness, effective date, and stop-level running times are not validated."
+    },
+    "secondary_route_pattern_check": {
+      "route_label_in_google_maps": "A-397",
+      "candidate_gtfs_route_id": "BEST_2901",
+      "origin_departure_in_google_maps": "00:11",
+      "candidate_gtfs_departure": "00:10",
+      "first_ten_ordered_stops_align_through": "Janata Market",
+      "scheduled_duration_in_candidate_gtfs": "zero seconds at all 11 stops",
+      "assessment": "Supports candidate stop pattern only; does not validate schedule effective date or running time."
+    },
+    "optimization_readiness": "Not ready for schedule-based operational optimization. Route-pattern exploration can continue, but passenger demand and observed running-time/capacity evidence must be collected separately."
+  }
 }
-
