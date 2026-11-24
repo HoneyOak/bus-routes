@@ -107,10 +107,11 @@
       "selected_service_date_examined": "2026-11-23",
       "url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
       "validation_status": "user_supplied_394_as_screenshot_timetable_compared_with_mismatches",
-      "publisher": "BEST Undertaking",
-      "operator_controlled_app_listing_verified": true,
       "bulk_gtfs_download_url_identified": false,
-      "selected_service_date": "2026-11-23"
+      "selected_service_date": "2026-11-23",
+      "app_store_developer_name": "THE BEST",
+      "operator_identity_basis": "Google Play listing description says BEST Undertaking developed the app; support contact uses transport@bestundertaking.com.",
+      "operator_primary_reference_status": "supported_by_operator_identifying_listing_and_user_supplied_app_screenshots"
     }
   ],
   "primary_app_observations": [
@@ -150,7 +151,7 @@
       "visible_times_absent_from_gtfs": 5
     }
   ],
-  "reviewed_on": "2026-11-23",
+  "reviewed_on": "2026-11-24",
   "schema_version": 1,
   "secondary_schedule_references": [
     {
@@ -207,18 +208,19 @@
   ],
   "feed_selection": {
     "reviewed_on": "2026-11-24",
-    "decision": "No public operator-issued BEST GTFS feed was located. Select BEST Prawas as the primary operator timetable reference, while retaining the BLRTransit multi-operator GTFS snapshot as an exploratory candidate only.",
+    "decision": "The source screening did not identify a public operator-issued BEST GTFS feed. Select BEST Prawas as the primary operator timetable reference, while retaining the BLRTransit multi-operator GTFS snapshot as an exploratory candidate only.",
     "selected_primary_reference": {
       "id": "best_prawas_official_operator_app",
       "operator": "BEST Undertaking",
       "source_type": "operator app timetable reference",
       "format": "BEST Prawas application; not a publicly downloadable bulk GTFS feed",
       "listing_url": "https://play.google.com/store/apps/details?id=com.dimts.best.bestapplication",
-      "verification_basis": "The Google Play listing identifies BEST Undertaking as developer and describes the app as developed by BEST Undertaking, with a static timetable for each route.",
+      "verification_basis": "Google Play lists developer name THE BEST, says BEST Undertaking developed the app, provides a bestundertaking.com support contact, and lists a static timetable for each route.",
       "screenshot_capture_date": "2026-11-23",
       "selected_service_date": "2026-11-23",
       "schedule_effective_date_identified": false,
-      "bulk_download_url_identified": false
+      "bulk_download_url_identified": false,
+      "listing_developer_name": "THE BEST"
     },
     "candidate_gtfs_assessment": {
       "id": "local_blrtransit_snapshot",
